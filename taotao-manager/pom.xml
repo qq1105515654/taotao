@@ -11,6 +11,7 @@
         <module>taotao-manager-pojo</module>
         <module>taotao-manager-mapper</module>
         <module>taotao-manager-service</module>
+        <module>taotao-manager-controller</module>
     </modules>
     <packaging>pom</packaging>
     <parent>
