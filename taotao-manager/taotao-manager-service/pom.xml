@@ -12,7 +12,7 @@
     <artifactId>taotao-manager-service</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    
+
     <!--service 依赖于mapper-->
     <dependencies>
         <dependency>
