@@ -10,8 +10,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class TestServiceImple  implements TestService {
+
     @Override
     public String getJsp() {
+
         return "redirect:/";
     }
 }

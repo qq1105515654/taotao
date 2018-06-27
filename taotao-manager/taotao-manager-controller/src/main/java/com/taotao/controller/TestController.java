@@ -18,7 +18,6 @@ public class TestController {
 
     @RequestMapping("/home")
     public String getJsp() {
-
         return testService.getJsp();
     }
 }
