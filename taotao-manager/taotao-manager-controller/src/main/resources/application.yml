@@ -17,6 +17,6 @@ spring:
     encoding: UTF-8
     cache: false
     content-type: text/html
-#mybatis:
-#  config-location: classpath:mybatis/mybatis-config.xml
-#  mapper-locations: classpath:mapper/**/**.xml
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mapper/**/**.xml
