@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="com.taotao.dao.ContentInfoDao">
+    <resultMap id="BaseResultMap" type="com.taotao.pojo.ContentInfo">
+        <result column="id" property="id" jdbcType="BIGINT"/>
+        <result column="category_id" property="categoryId" jdbcType="BIGINT" />
+        <result column="title" property="title" jdbcType="VARCHAR" />
+        <result column="sub_title" property="subTitle" jdbcType="VARCHAR" />
+        <result column="title_desc" property="titleDesc" jdbcType="VARCHAR" />
+        <result column="url" property="url" jdbcType="VARCHAR" />
+        <result column="pic" property="pic" jdbcType="VARCHAR" />
+        <result column="pic2" property="picTwo" jdbcType="VARCHAR" />
+        <result column="content" property="content" jdbcType="VARCHAR" />
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+</mapper>
