@@ -3,30 +3,30 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link href="../static/css/shop.css" type="text/css" rel="stylesheet" />
-<link href="../static/skin/default/skin.css" rel="stylesheet" type="text/css" id="skin" />
-<link href="../static/css/Sellerber.css" type="text/css"  rel="stylesheet" />
-<link href="../static/css/bkg_ui.css" type="text/css" rel="stylesheet" />
-<link href="../static/font/css/font-awesome.min.css"  rel="stylesheet" type="text/css" />
-<script src="../static/js/jquery-1.9.1.min.js" type="text/javascript" ></script>
-<script src="../static/js/layer/layer.js" type="text/javascript"></script>
-<script src="../static/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="../static/js/shopFrame.js" type="text/javascript"></script>
-<script src="../static/js/jquery.nicescroll.js" type="text/javascript"></script>
-<script type="text/javascript" src="../static/js/jquery.cookie.js"></script>
+<link href="static/css/shop.css" type="text/css" rel="stylesheet" />
+<link href="static/skin/default/skin.css" rel="stylesheet" type="text/css" id="skin" />
+<link href="static/css/Sellerber.css" type="text/css"  rel="stylesheet" />
+<link href="static/css/bkg_ui.css" type="text/css" rel="stylesheet" />
+<link href="static/font/css/font-awesome.min.css"  rel="stylesheet" type="text/css" />
+<script src="static/js/jquery-1.9.1.min.js" type="text/javascript" ></script>
+<script src="static/js/layer/layer.js" type="text/javascript"></script>
+<script src="static/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="static/js/shopFrame.js" type="text/javascript"></script>
+<script src="static/js/jquery.nicescroll.js" type="text/javascript"></script>
+<script type="text/javascript" src="static/js/jquery.cookie.js"></script>
 <title>店铺管理</title>
 </head>
 <!--[if lt IE 9]>
-  <script src="../static/js/html5shiv.js"></script>
-  <script src="../static/js/respond.min.js"></script>
-  <script type="text/javascript" src="../static/js/PIE/PIE_IE678.js"></script>
+  <script src="static/js/html5shiv.js"></script>
+  <script src="static/js/respond.min.js"></script>
+  <script type="text/javascript" src="static/js/PIE/PIE_IE678.js"></script>
  <![endif]-->
 <body>
 
  <div class="Sellerber" id="Sellerber">
  <!--顶部-->
   <div class="Sellerber_header apex clearfix" id="Sellerber_header">
-   <div class="l_f logo header"><img src="../static/images/logo_03.png" /></div>
+   <div class="l_f logo header"><img src="static/images/logo_03.png" /></div>
    <div class="r_f Columns_top clearfix header">
    <!--<div class="time_style l_f"><i class="fa  fa-clock-o"></i><span id="time"></span></div>-->
       <div class="search_style l_f">
@@ -38,7 +38,7 @@
      </div>
    <div class="news l_f "><a href="#" class="fa fa-bell Notice prompt" id="promptbtn"></a><em>5</em></div>
      <div class="administrator l_f">
-       <img src="../static/images/avatar.png"  width="36px"/><span class="user-info">欢迎你,超级管理员</span><i class="glyph-icon fa  fa-caret-down"></i>
+       <img src="static/images/avatar.png"  width="36px"/><span class="user-info">欢迎你,超级管理员</span><i class="glyph-icon fa  fa-caret-down"></i>
        <ul class="dropdown-menu">
         <li><a href="#"><i class="fa fa-user"></i>个人信息</a></li>
         <li><a href="#"><i class="fa fa-cog"></i>系统设置</a></li>
@@ -82,7 +82,7 @@
        <a id="js-tabNav-prev" class="radius btn-default left_roll" href="javascript:;"><i class="fa fa-backward"></i></a>
        <div class="breadcrumb_style clearfix">
 	     <ul class="breadcrumb clearfix" id="min_title_list">
-          <li class="active home"><span title="我的桌面" data-href="index.html"><i class="fa fa-home home-icon"></i>首页</span></li>
+          <li class="active home"><span title="我的桌面" data-href="/index"><i class="fa fa-home home-icon"></i>首页</span></li>
          </ul>
       </div>
        <a id="js-tabNav-next" class="radius btn-default right_roll" href="javascript:;"><i class="fa fa-forward"></i></a>
@@ -100,7 +100,7 @@
   <!--具体内容-->  
   <div id="iframe_box" class="iframe_content">
   <div class="show_iframe index_home" id="show_iframe">
-       <iframe scrolling="yes" class="simei_iframe" frameborder="0" src="index.html" name="iframepage" data-href="index.html"></iframe>
+       <iframe scrolling="yes" class="simei_iframe" frameborder="0" src="/index" name="iframepage" data-href="/index"></iframe>
        </div>
       </div>
   </div>
@@ -257,7 +257,7 @@
 		 id:26,
 		 pid:1,
 		 icon:'fa fa-angle-double-right',
-		 url:'index.html',
+		 url:'/index',
 		 name:'首页',
 
   },
@@ -265,7 +265,7 @@
 		  id:34,
 		  pid:2,
 		  icon:'fa fa-angle-double-right',
-		  url:'add_product.html',
+		  url:'/product',
 		  name:'添加商品',
 
 	},
@@ -273,7 +273,7 @@
 		 id:35,
 		 pid:2,
 		 icon:'fa fa-angle-double-right',
-		 url:'Brand_Manage.html',
+		 url:'/brand',
 		 name:'品牌管理',
 
   },
@@ -281,7 +281,7 @@
 		 id:36,
 		 pid:2,
 		 icon:'fa fa-angle-double-right',
-		 url:'Products.html',
+		 url:'/products',
 		 name:'商品分类',
 
 	},
@@ -289,7 +289,7 @@
 		 id:37,
 		 pid:12,
 		 icon:'fa fa-angle-double-right',
-		 url:'Columns.html',
+		 url:'/columns',
 		 name:'栏目管理',
 
 	},{
@@ -483,7 +483,7 @@
 		menu_nav:'.menu_list',//设置栏目属性
 		column_list:'.column_list',//设置栏目名称
 		time:'.date_time',//设置时间属性(不填写不显示)
-		logo_img:'../static/images/logo_01.png',//logo地址链接（当header为0时显示该属性）
+		logo_img:'static/images/logo_01.png',//logo地址链接（当header为0时显示该属性）
 	    Sellerber_content:'.Sellerber_content',//右侧名称
 		Sellerber_menu:'.list_content', //左侧栏目
 		header:'.Sellerber_header',//顶部栏目	

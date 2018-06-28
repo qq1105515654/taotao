@@ -19,10 +19,10 @@ public class BaseEntity implements Serializable {
     private Long id;
 
     @Column(name="create_time")
-    private Date created;
+    private String createTime;
 
     @Column(name = "update_time")
-    private Date updated;
+    private String updateTime;
 
     @Column(name = "status")
     private int status;
@@ -43,19 +43,19 @@ public class BaseEntity implements Serializable {
         this.id = id;
     }
 
-    public Date getCreated() {
-        return created;
+    public String getCreateTime() {
+        return createTime;
     }
 
-    public void setCreated(Date created) {
-        this.created = created;
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
     }
 
-    public Date getUpdated() {
-        return updated;
+    public String getUpdateTime() {
+        return updateTime;
     }
 
-    public void setUpdated(Date updated) {
-        this.updated = updated;
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
     }
 }
