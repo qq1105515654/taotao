@@ -109,4 +109,17 @@ public class ItemInfo extends BaseEntity {
     public void setCid(Long cid) {
         this.cid = cid;
     }
+
+    @Override
+    public String toString() {
+        return "ItemInfo{" +
+                "title='" + title + '\'' +
+                ", sellPoint='" + sellPoint + '\'' +
+                ", price=" + price +
+                ", num=" + num +
+                ", barcode='" + barcode + '\'' +
+                ", image='" + image + '\'' +
+                ", cid=" + cid +
+                '}';
+    }
 }
