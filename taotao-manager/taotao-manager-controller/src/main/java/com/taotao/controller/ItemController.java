@@ -33,9 +33,9 @@ public class ItemController {
         return itemService.getItemInfoById(itemId);
     }
 
-    @GetMapping("/all")
+    @PostMapping("/all")
     @ResponseBody
-    public Object getItemAll(HttpServletRequest request){
+    public Object getItemAll(int start,int length,String condition,HttpServletRequest request){
 
         List<ItemInfo> list=itemService.getItemAll();
         logger.info("查询出的商品数据:'{}'",list);
