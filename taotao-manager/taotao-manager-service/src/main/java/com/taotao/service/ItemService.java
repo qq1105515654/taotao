@@ -1,8 +1,8 @@
 package com.taotao.service;
 
+import com.taotao.common.PageResult;
+import com.taotao.dto.ItemInfoDto;
 import com.taotao.pojo.ItemInfo;
-
-import java.util.List;
 
 /**
  * @Author：盛年华
@@ -13,5 +13,7 @@ public interface ItemService {
 
     ItemInfo getItemInfoById(Long id);
 
-    List<ItemInfo> getItemAll();
+    PageResult<ItemInfo> getItemAll(int pageNo, int pageSize);
+
+    int setItemInfoStatus(Long id,int status);
 }

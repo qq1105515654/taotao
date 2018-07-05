@@ -1,7 +1,10 @@
 package com.taotao.controller;
 
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
+import com.taotao.common.BaseController;
+import com.taotao.common.PageResult;
+import com.taotao.common.PageUtils;
+import com.taotao.dto.ItemInfoDto;
+import com.taotao.enums.ItemInfoEnum;
 import com.taotao.pojo.ItemInfo;
 import com.taotao.service.ItemService;
 import org.slf4j.Logger;
@@ -11,7 +14,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 
 /**
@@ -21,7 +23,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/item")
-public class ItemController {
+public class ItemController  extends BaseController {
     Logger logger=LoggerFactory.getLogger(ItemController.class);
     @Autowired
     private ItemService itemService;
@@ -36,9 +38,20 @@ public class ItemController {
     @PostMapping("/all")
     @ResponseBody
     public Object getItemAll(int start,int length,String condition,HttpServletRequest request){
+        int pageNo=PageUtils.getStart(start,length);
+        PageResult<ItemInfo> itemInfoDto=itemService.getItemAll(pageNo,length);
+        logger.info("查询出的商品数据:'{}'",itemInfoDto.getData());
+        return itemInfoDto;
+    }
 
-        List<ItemInfo> list=itemService.getItemAll();
-        logger.info("查询出的商品数据:'{}'",list);
-        return list;
+    @PostMapping("/update/{id}/{status}")
+    @ResponseBody
+    public Object setItemInfoStatus(@PathVariable Long id,@PathVariable int status){
+
+        int updateCount=itemService.setItemInfoStatus(id,status);
+        if(updateCount==1){
+            return success();
+        }
+        return failed("操作失败，请稍后再试");
     }
 }

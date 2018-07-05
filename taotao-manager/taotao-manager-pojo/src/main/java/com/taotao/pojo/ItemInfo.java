@@ -52,7 +52,12 @@ public class ItemInfo extends BaseEntity {
      *  所属类目， 叶子类目
      */
     @Column(name = "cid")
-    private Long cid;
+    private String cid;
+
+    @Column(name = "audit_Status")
+    private String auditStatus;
+
+
 
     public String getTitle() {
         return title;
@@ -102,12 +107,20 @@ public class ItemInfo extends BaseEntity {
         this.image = image;
     }
 
-    public Long getCid() {
+    public String getCid() {
         return cid;
     }
 
-    public void setCid(Long cid) {
+    public void setCid(String cid) {
         this.cid = cid;
+    }
+
+    public String getAuditStatus() {
+        return auditStatus;
+    }
+
+    public void setAuditStatus(String auditStatus) {
+        this.auditStatus = auditStatus;
     }
 
     @Override
@@ -120,6 +133,7 @@ public class ItemInfo extends BaseEntity {
                 ", barcode='" + barcode + '\'' +
                 ", image='" + image + '\'' +
                 ", cid=" + cid +
+                ", auditStatus=" + auditStatus +
                 '}';
     }
 }
