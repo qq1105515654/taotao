@@ -7,6 +7,7 @@ var items=function(){
             "bSort":false,
             "bLengthChange":true,
             "bInfo":true,
+            "bStateSave":true,
             "bAutoWidth":true,
             "serverSide":true,/*详细分页组，可以支持跳转到某页*/
             "pageLength":10,/*每页显示数据条数*/
@@ -80,7 +81,7 @@ var items=function(){
                     "sLast":"尾页"
                 }
             }
-        });
+        }).fnDraw(false);
 
     };
 

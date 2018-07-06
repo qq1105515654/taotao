@@ -18,10 +18,13 @@ public interface ItemDao {
     @Select("select * from tb_item where id=#{id}")
     ItemInfo getItemInfoById(@Param("id") Long id);
 
-    @Select("select * from tb_item")
+    @Select("select * from tb_item where status=1 or status=2")
     List<ItemInfo> getItemAll();
 
     @Update("update tb_item set status=#{status} where id=#{id}")
     int setItemInfoStatus(@Param("id") Long id,@Param("status") int status);
+
+    @Update("update tb_item set status=3 where id=#{id}")
+    int deleteItemInfo(@Param("id") Long id);
 
 }

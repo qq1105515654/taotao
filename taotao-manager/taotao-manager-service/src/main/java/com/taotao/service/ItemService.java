@@ -16,4 +16,6 @@ public interface ItemService {
     PageResult<ItemInfo> getItemAll(int pageNo, int pageSize);
 
     int setItemInfoStatus(Long id,int status);
+
+    int deleteItemInfo(Long id);
 }

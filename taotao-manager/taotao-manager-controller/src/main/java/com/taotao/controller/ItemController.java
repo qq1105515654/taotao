@@ -24,6 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 @RequestMapping("/item")
 public class ItemController  extends BaseController {
+
     Logger logger=LoggerFactory.getLogger(ItemController.class);
     @Autowired
     private ItemService itemService;
@@ -53,5 +54,15 @@ public class ItemController  extends BaseController {
             return success();
         }
         return failed("操作失败，请稍后再试");
+    }
+
+    @PostMapping("/del/{id}")
+    @ResponseBody
+    public Object deleteItemInfo(@PathVariable Long id){
+        int deleteCount=itemService.deleteItemInfo(id);
+        if(deleteCount==1){
+            return success();
+        }
+        return failed("刪除失败，请稍后再试！");
     }
 }

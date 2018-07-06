@@ -75,7 +75,7 @@
 	<th width="80px">分类</th>
 	<th width="250px">产品名称</th>
 	<th width="100px">产品描述</th>
-	<th width="100px">价格</th>
+	<th width="100px">价格/元</th>
 	<th width="100px">库存</th>
 	<th width="180px">加入时间</th>
 	<th width="80px">审核状态</th>
@@ -221,6 +221,7 @@ var arr = [{
 ];
 //树状图插件
 $(".tree").ProTree({
+    ajax:"",
 	arr: arr,//数据
 	simIcon: "fa fa-file-text-o",//单个标题字体图标 不传默认glyphicon-file
 	mouIconOpen: "fa fa-folder-open",//含多个标题的打开字体图标  不传默认glyphicon-folder-open
@@ -257,12 +258,10 @@ laydate(end);
 function member_stop(obj,id){
 	layer.confirm('确认要下架该产品吗？',function(index){
         $.post("/item/update/"+id+"/2").then(function (data){
+            layer.msg(data.message,{icon:1,time:1000});
             if(data.code==200){
-                layer.msg(data.msg,{icon: 5,time:1000});
                 var datatable=$("#table_exmple").dataTable();
-                datatable.ajax.reload();
-            }else{
-                layer.msg(data.msg,{icon:1,time:1000});
+                datatable.api().ajax.reload();
             }
         })
 
@@ -272,12 +271,10 @@ function member_stop(obj,id){
 function member_start(obj,id){
 	layer.confirm('确认要上架改该产品吗？',function(index){
 		$.post("/item/update/"+id+"/1").then(function (data){
+            layer.msg(data.message,{icon:1,time:1000});
 		    if(data.code==200){
-                layer.msg(data.msg,{icon:1,time:1000});
                 var datatable=$("#table_exmple").dataTable();
-                datatable.ajax.reload();
-            }else{
-                layer.msg(data.msg,{icon:1,time:1000});
+                datatable.api().ajax.reload();
             }
         })
 	});
@@ -290,8 +287,14 @@ function member_edit(title,url,id,w,h){
 /*产品-删除*/
 function member_del(obj,id){
 	layer.confirm('确认要删除吗？',function(index){
-		$(obj).parents("tr").remove();
-		layer.msg('已删除!',{icon:1,time:1000});
+		$.post("/item/del/"+id).then(function(data){
+            layer.msg(data.message,{icon:1,time:1000});
+		    if(data.code==200){
+                var datatable=$("#table_exmple").dataTable();
+                datatable.api().ajax.reload();
+            }
+        })
+
 	});
 }
 </script>
